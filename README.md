@@ -24,4 +24,4 @@ This is a personal portfolio web page built using HTML, CSS, and JavaScript. The
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/YOUR_GITHUB_USERNAME/personal-portfolio.git
+   git clone https://github.com/yuvanandini/Personal-Portifolio.git
