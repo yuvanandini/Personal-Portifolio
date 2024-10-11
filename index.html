@@ -4,28 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dharmada Yuva Nandini - Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/742df65007.js" crossorigin="anonymous"></script>
+  
+  <!-- AOS Library for Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-header">
+            <button id="navbarToggle" class="navbar-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i> <!-- Ensure Font Awesome is included -->
+            </button>
+            <h1 class="navbar-title">My Portfolio</h1>
+        </div>
+        <div id="navbarItems" class="navbar-items">
+            <ul>
+                <li><a href="#header">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+                      <i class="fas fa-moon"></i>
+                    </button>
+                  </li>
+            </ul>
+        </div>
+    </nav>
+  
+
   <!-- Header Section -->
-  <header>
+  <header id="header">
     <h1>Dharmada Yuva Nandini</h1>
     <p>Welcome to my personal portfolio! I'm a passionate Front End Developer eager to create impactful web applications.</p>
   </header>
 
   <!-- Skills Section -->
-  <section id="skills">
+  <section id="skills" data-aos="fade-up">
     <h2>Top Skills</h2>
     <ul>
-      <li>JavaScript & React.js</li>
-      <li>HTML & CSS</li>
-      <li>Responsive Web Design</li>
+      <li><i class="fab fa-react"></i> JavaScript & React.js</li>
+      <li><i class="fab fa-html5"></i> HTML & CSS</li>
+      <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
     </ul>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" data-aos="fade-up" data-aos-delay="200">
     <h2>Projects</h2>
     <div class="project-list" id="projectList">
       <!-- Projects will be dynamically inserted here via JavaScript -->
@@ -33,32 +67,55 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" data-aos="fade-up" data-aos-delay="400">
     <h2>Contact Me</h2>
     <form id="contactForm">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your Name">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="your.email@example.com">
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
 
       <label for="message">Message:</label>
-      <textarea id="message" name="message" placeholder="Your message here..."></textarea>
+      <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
 
       <button type="submit">Send Message</button>
     </form>
   </section>
 
+  <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Dharmada Yuva Nandini. All rights reserved.</p>
+        <ul>
+            <li><a href="https://github.com/yuvanandini" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/dharmada-yuva-nandini-1a941127a/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:yuvanandini07@outlook.com"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+    </footer>
+
+
   <!-- Modal for Project Details -->
-  <div id="projectModal" class="modal">
+  <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
     <div class="modal-content">
-      <span class="close-button" id="closeModal">&times;</span>
+      <span class="close-button" id="closeModal" aria-label="Close">&times;</span>
       <h3 id="modalTitle">Project Title</h3>
       <p id="modalDescription">Project Description</p>
       <a href="#" id="modalLink" target="_blank">View Project</a>
     </div>
   </div>
 
+  <!-- AOS Library for Animations -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  
+  <!-- JavaScript File -->
   <script src="script.js"></script>
+  
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      duration: 800, // Animation duration
+      once: true,    // Whether animation should happen only once
+    });
+  </script>
 </body>
 </html>
